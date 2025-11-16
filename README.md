@@ -15,9 +15,9 @@
 
 이 프로젝트는 Python과 Fusion 360을 연동한 최적화 방식을 사용합니다.
 
-1.  **Python (두뇌):** `main.py` 스크립트가 [**황금 분할 탐색(Golden Section Search, GSS)**](https://en.wikipedia.org/wiki/Golden-section_search) 알고리즘을 실행합니다.
-2.  **Fusion 360 (계산기):** 사용자는 Python이 알려준 `r` (곡률 반경), `D` (단면 지름) 값을 Fusion 360의 파라미터에 입력하여 "정적 응력" 시뮬레이션을 실행합니다.
-3.  **Human (입력):** 사용자는 Fusion 360에서 계산된 최대 폰 미세스 응력(MPa) 값을 다시 Python 터미널에 입력합니다.
+1.  **Python:** `main.py` 스크립트가 [**황금 분할 탐색(Golden Section Search, GSS)**](https://en.wikipedia.org/wiki/Golden-section_search) 알고리즘을 실행합니다.
+2.  **Fusion 360:** 사용자는 Python이 알려준 `r` (곡률 반경), `D` (단면 지름) 값을 Fusion 360의 파라미터에 입력하여 "정적 응력" 시뮬레이션을 실행합니다.
+3.  **User:** 사용자는 Fusion 360에서 계산된 최대 폰 미세스 응력(MPa) 값을 다시 Python 터미널에 입력합니다.
 4.  **반복:** GSS 알고리즘이 입력된 응력 값을 바탕으로 탐색 구간을 좁혀 다음 `r`, `D` 값을 제안합니다.<br> 이 과정은 탐색 구간이 `tolerance` (default: 50.0mm) 이하로 줄어들 때까지 반복됩니다.
 5.  **최종 탐색:** 1~4번의 GSS 과정을 여러 질량(m) 값에 대해 반복 수행하여, 최종 목표 안전계수 4.5를 만족하는 최적의 질량(`m`)을 찾아냅니다.
 
